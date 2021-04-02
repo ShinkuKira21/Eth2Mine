@@ -30,7 +30,7 @@ const Navigation = () => (
 function GetSession()
 {
 	// Admin | LoggedIn
-	var session = [true, true];
+	var session = [false, false];
 	return session;
 }
 

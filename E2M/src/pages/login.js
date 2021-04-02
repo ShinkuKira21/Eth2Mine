@@ -4,7 +4,7 @@ const login = () => {
     return (
 		 <div className='page-title'>
 			<h1>Login</h1>
-			<LoginPrompt />
+	    <LoginPrompt/>
 		 </div>	
     );
 }
