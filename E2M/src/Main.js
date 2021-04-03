@@ -4,7 +4,7 @@ import Statistics from './pages/statistics';
 import Account from './pages/account';
 import aLogin from './pages/login';
 import aReg from './pages/register';
-import ping from './comps/react-server'
+
 import {Switch, Route } from 'react-router-dom';
 
 const Home = () => (
@@ -21,7 +21,6 @@ const Main = () => (
       <Route exact path='/account' component={Account}/>
       <Route exact path='/account/login' component={aLogin}/>
       <Route exact path='/account/register' component={aReg}/>
-      <Route exact path='/ping' component={ping}/>
     </Switch>
 );
 

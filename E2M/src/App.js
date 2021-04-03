@@ -1,9 +1,8 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 import Main from './Main';
 import './App.css';
 
-function App() {
+function App() {	
   return (
 	<div className='App'>
 		<h1>Eth2Mine</h1>
@@ -21,7 +20,7 @@ const Navigation = () => (
 			{GetSession()[1] ? <li className='navbar-brand mb-0 h1'><NavLink to='/account'>Account</NavLink></li> :
 			<span className='login'>
 				<li className='navbar-brand mb-0 h1'><NavLink to='/account/login'>Login</NavLink></li>
-				<li className='navbar-brand mb-0 h1'><NavLink to='/account/register'>Register</NavLink></li>
+				{/*<li className='navbar-brand mb-0 h1'><NavLink to='/account/register'>Register</NavLink></li>*/}
 			</span>}
 		</ul>
 	</nav>
