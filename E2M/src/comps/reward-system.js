@@ -24,8 +24,8 @@ export default class Rewards extends React.Component {
         highRewards = [
             15, // bronze
             125, // silver
-            200, // gold
-            300, // premium
+            250, // gold
+            360, // premium
         ]
     }
 }
