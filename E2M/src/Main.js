@@ -2,8 +2,8 @@ import React from 'react';
 import Ethminer from './api/ethminer';
 import Statistics from './pages/statistics';
 import Account from './pages/account';
-import aLogin from './pages/login'
-import aReg from './pages/register'
+import aLogin from './pages/login';
+import aReg from './pages/register';
 
 import {Switch, Route } from 'react-router-dom';
 

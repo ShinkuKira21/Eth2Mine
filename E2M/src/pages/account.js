@@ -1,11 +1,5 @@
-import EtherMiner from "../api/ethminer";
 import EtherMinerWorker from "../api/ethminer-miner"
 import EthermineGen from "../comps/ethermine-gen";
-
-var state =
-{
-    address: "h"
-}
 
 const account = () => 
 {

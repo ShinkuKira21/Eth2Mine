@@ -1,34 +1,13 @@
 import React from 'react'
+import Session from '../api/session';
+import FetchPing from '../comps/py-server';
 
 const login = () => {
     return (
 		 <div className='page-title'>
 			<h1>Login</h1>
-			<LoginPrompt />
+            <Session login={true}/>
 		 </div>	
     );
 }
-
-function LoginPrompt()
-{
-   return (
-        <div className='Login-Form'>
-			<label id='account-wallet'>Your ETH Wallet: <input type='text'/></label><br/>
-            <label id='account-password'>Account Password: <input type='text'/></label><br/>
-            <label>Select Mining Pool:</label><br/>
-                <select id='eth-wallet'>
-                    <option>Eth4Default</option>
-                </select>
-            <br/>
-            <br/>
-            <button>Login</button>
-		</div>
-   );
-}
-
-function CheckLogin()
-{
-    
-}
-
 export default login
