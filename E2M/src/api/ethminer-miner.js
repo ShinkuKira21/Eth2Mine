@@ -50,7 +50,7 @@ export default class EtherMinerWorker extends React.Component {
 						Current Hashrate: {(this.state.ethpool.currentHashrate / this.state.units).toFixed(2)}MH/s <br/>
 						Average Hashrate: {(this.state.ethpool.averageHashrate / this.state.units).toFixed(2)}MH/s <br/>
 						Reported Hashrate: {(this.state.ethpool.reportedHashrate / this.state.units).toFixed(2)}MH/s <br/>			
-						Mining Time: {GetWorkerHours(this.state.history)[0]} hours
+						Current Mining Time: {GetWorkerHours(this.state.history)[0]} hours
 					</div>}
 				</div>
 			);

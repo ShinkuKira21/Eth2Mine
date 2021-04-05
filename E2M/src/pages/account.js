@@ -1,5 +1,6 @@
 import EtherMinerWorker from "../api/ethminer-miner"
 import EthermineGen from "../comps/ethermine-gen";
+import Rewards from "../comps/reward-system";
 
 const account = () => 
 {
@@ -17,9 +18,9 @@ const account = () =>
             <div className='statistics'>
                 <LoadAccount qryWorker="cg"/>
             </div> 
-
-            <div className='payday'>
-                <h2>Request Payment</h2>
+            
+            <div className="rewards">
+                <Rewards />
             </div>
         </div>
     );

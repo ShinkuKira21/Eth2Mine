@@ -4,6 +4,7 @@ export default class EthermineGen extends React.Component
 {
     state = {
         address: null,
+        raw: null,
         gpu: "-G",
         server: "eu1"
     }
@@ -12,7 +13,9 @@ export default class EthermineGen extends React.Component
     {
         var gen = "ethminer.exe -P stratum1+tcp://0xd2B0B8133b1E30EC7C7936153116F8bC955cb20f."+ qryWorker + "@"+this.state.server + ".ethermine.org:4444 " + this.state.gpu + " -R";
 
-        this.setState({address: gen});
+        var raw = "stratum1+tcp://0xd2B0B8133b1E30EC7C7936153116F8bC955cb20f."+ qryWorker + "@"+this.state.server + ".ethermine.org:4444";
+
+        this.setState({address: gen, raw: raw});
     }
 
     updateServer = (event) =>
@@ -46,7 +49,10 @@ export default class EthermineGen extends React.Component
 
                 <button onClick={() => this.generate(this.props.worker)}>Generate Mining Address</button><br/>
 
-                <p>{this.state.address}</p>
+                <p>
+                    Ethminer Address:<br/>{this.state.address}<br/>
+                    Address:<br/>{this.state.raw}
+                </p>
             </div>
         );
     }
