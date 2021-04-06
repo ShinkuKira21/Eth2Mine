@@ -1,33 +1,15 @@
 import EtherMinerWorker from '../api/ethminer-miner.js';
-import EthMiner from  '../api/ethminer.js'
+import EthMiner from  '../api/ethminer.js';
+import WorkerSearch from '../comps/worker-search';
 
 const statistics = () => {
     return (
-		 <div className='page-title'>
+		 <div className='statistics'>
 			<h1>Admin | Statistics</h1>
-			<SearchWallet/>
-			
+			<GetStatistic />
+			<GetWorker />
 		 </div>	
     );
-}
-
-function SearchWallet()
-{
-	const bSearch = false;
-
-	return(
-		<div>
-			<input></input>
-			<button value="">Search</button>
-			<GetStatistic />
-			<GetWorker qryWorker="cg"/>
-			<GetWorker qryWorker="tester-drshocking12"/>
-			<GetWorker qryWorker="tester-ella"/>
-			<GetWorker qryWorker="tester-JohnF56"/>
-			<GetWorker qryWorker="tester-vhoon"/>
-			<GetWorker qryWorker="tester-rbvortex"/>
-		</div>
-	);
 }
 
 function GetStatistic(qryWallet)
@@ -37,8 +19,7 @@ function GetStatistic(qryWallet)
 
 function GetWorker(qryWorker)
 {
-	const qry = qryWorker;
-	return <EtherMinerWorker worker={qry.qryWorker} admin={true}/>;
+	return <WorkerSearch/>;
 }
 
 function GetWorkerHistory()

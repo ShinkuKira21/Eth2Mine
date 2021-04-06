@@ -23,8 +23,6 @@ export default class EtherMinerWorker extends React.Component {
 
 		const minerHistoryURL = "https://api.ethermine.org/miner/" + this.state.wallet + "/worker/" + this.props.worker + "/history";
 
-		console.log(minerURL);
-
 		var response = await fetch(minerURL);
 		var data = await response.json();
 

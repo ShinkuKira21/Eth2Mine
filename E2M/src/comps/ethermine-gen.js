@@ -9,11 +9,11 @@ export default class EthermineGen extends React.Component
         server: "eu1"
     }
 
-    generate = (qryWorker, gpu) => 
+    generate = (qryWorker) => 
     {
-        var gen = "ethminer.exe -P stratum1+tcp://0xd2B0B8133b1E30EC7C7936153116F8bC955cb20f."+ qryWorker + "@"+this.state.server + ".ethermine.org:4444 " + this.state.gpu + " -R";
+        var gen = "ethminer.exe -P stratum1+tcp://0xd2B0B8133b1E30EC7C7936153116F8bC955cb20f."+ qryWorker + "@" + this.state.server + ".ethermine.org:4444 " + this.state.gpu + " -R";
 
-        var raw = "stratum1+tcp://0xd2B0B8133b1E30EC7C7936153116F8bC955cb20f."+ qryWorker + "@"+this.state.server + ".ethermine.org:4444";
+        var raw = "stratum1+tcp://0xd2B0B8133b1E30EC7C7936153116F8bC955cb20f."+ qryWorker + "@" + this.state.server + ".ethermine.org:4444";
 
         this.setState({address: gen, raw: raw});
     }
