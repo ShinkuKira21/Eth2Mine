@@ -1,6 +1,6 @@
 import React from 'react'
 import Session from '../api/session';
-import FetchPing from '../comps/py-server';
+import FetchPing from '../comps/py-server-scripts/ping';
 
 const login = () => {
     return (

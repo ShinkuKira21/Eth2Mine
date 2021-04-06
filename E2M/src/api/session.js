@@ -1,5 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
+import FetchPing from '../comps/py-server-scripts/ping';
 
 export default class Session extends React.Component
 {
@@ -8,7 +9,9 @@ export default class Session extends React.Component
         bAdmin: null,
         bLoggedin: null,
         workerName: null,
-        miningPool: null
+        workerPWD: null,
+        miningPool: null,
+        accountInfo: null,
     }
 
     CheckLogin()
@@ -28,6 +31,12 @@ export default class Session extends React.Component
     UpdateForm = (event) =>
     {
         this.setState({workerName: event.target.value});
+        this.setState({workerPWD: event.target.value});
+    }
+
+    GetAccount()
+    {
+        
     }
 
     render()
@@ -36,7 +45,8 @@ export default class Session extends React.Component
         {
             return(
                 <div className='Login-Form'>
-                    <label id='account-wallet'>Your Worker Name: <br/><input type='text' onChange={this.UpdateForm}/></label><br/>
+                    <label id='account-workerName'>Your Worker Name: <br/><input type='text' onChange={this.UpdateForm}/></label><br/>
+                    <label id='account-password'>Password:<br/><input type='password' onChange={this.UpdateForm}/></label><br/>
                     <label>Select Mining Pool:</label><br/>
                         <select id='eth-wallet'>
                             <option>Eth4Default</option>
@@ -58,3 +68,4 @@ export default class Session extends React.Component
         
     }
 }
+

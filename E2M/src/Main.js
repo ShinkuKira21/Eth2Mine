@@ -6,10 +6,12 @@ import aLogin from './pages/login';
 import aReg from './pages/register';
 
 import {Switch, Route } from 'react-router-dom';
+import FetchPing from './comps/py-server-scripts/ping';
 
 const Home = () => (
-	<div className='page-title'>
+	<div className='eth2mine'>
 		<h1>EtherMine</h1>
+    <FetchPing/>
     <Ethminer admin={false}/>
 	</div>
 );
