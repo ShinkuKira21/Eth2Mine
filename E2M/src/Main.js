@@ -6,7 +6,7 @@ import aLogin from './pages/login';
 import aReg from './pages/register';
 
 import {Switch, Route } from 'react-router-dom';
-import FetchPing from './comps/py-server-scripts/ping';
+import FetchPing from './comps/py-server-scripts/scrPing';
 
 const Home = () => (
 	<div className='eth2mine'>

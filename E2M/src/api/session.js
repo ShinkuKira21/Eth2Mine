@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect } from 'react-router';
-import FetchPing from '../comps/py-server-scripts/ping';
+import FetchPing from '../comps/py-server-scripts/scrPing';
 
 export default class Session extends React.Component
 {
