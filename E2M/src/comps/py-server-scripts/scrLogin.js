@@ -27,10 +27,13 @@ function RequestLogin(props)
             </div>
         );
     }
+
+    // this would have been nice in a component so that you could check if request is complete or not.
     else
     {
         return(
             <div>
+                Could be loading though!
                 Wrong Worker Name or Password!
             </div>
         );
