@@ -1,6 +1,6 @@
 const register = () => {
     return (
-        <div className='page-title'>
+        <div className='Register'>
             <h1>Register</h1>
             <RegisterPrompt />
         </div>
@@ -17,7 +17,6 @@ function RegisterPrompt() {
             <label>Confirm Password: <input/></label><br/>
             <br/>
             <button>Register</button>
-
         </div>
     );
 }

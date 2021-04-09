@@ -1,4 +1,3 @@
-import EtherMinerWorker from '../api/ethminer-miner.js';
 import EthMiner from  '../api/ethminer.js';
 import WorkerSearch from '../comps/worker-search';
 
@@ -20,11 +19,6 @@ function GetStatistic(qryWallet)
 function GetWorker(qryWorker)
 {
 	return <WorkerSearch/>;
-}
-
-function GetWorkerHistory()
-{
-	
 }
 
 export default statistics

@@ -20,9 +20,11 @@ class DatabaseConnection :
     def GetCursor(self) :
         return self.connection.cursor()
 
+    # NOT YET SECURE (BINDINGS WITH EXECUTE REQUIRED)
     def QuerySelectDatabase(self, qry) :
-        GetCursor().execute(qry)
+        cursor = self.GetCursor()
+        cursor.execute(qry)
+        return cursor
 
     def CloseDatabase(self) :
         self.connection.close()
-    

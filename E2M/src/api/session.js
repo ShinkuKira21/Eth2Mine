@@ -1,6 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router';
-import FetchPing from '../comps/py-server-scripts/scrPing';
+import RequestLogin from '../comps/py-server-scripts/scrLogin'
 
 export default class Session extends React.Component
 {
@@ -12,48 +11,46 @@ export default class Session extends React.Component
         workerPWD: null,
         miningPool: null,
         accountInfo: null,
+        bSearch: false,
     }
 
     CheckLogin()
     {
-        if(this.state.workerName != null)
-        {
-            if(this.state.workerName == "admin-token")
-                this.state.bAdmin = true;
-
-            this.state.bLoggedin = true;
-
-            if(this.state.bLoggedin)
-                <Redirect to="/account"/>
-        }
+        if(this.state.workerName != null && this.state.workerPWD != null)
+            this.setState({bSearch: true});
+           
     }
 
-    UpdateForm = (event) =>
+    UpdateWorkerName = (event) =>
     {
-        this.setState({workerName: event.target.value});
+        this.setState({bSearch: false, workerName: event.target.value});
+    }
+
+    UpdateWorkerPassword = (event) =>
+    {
         this.setState({workerPWD: event.target.value});
-    }
-
-    GetAccount()
-    {
-        
     }
 
     render()
     {
-        if(this.props.login == true)
-        {
+        if(this.props.login)
+        {         
             return(
-                <div className='Login-Form'>
-                    <label id='account-workerName'>Your Worker Name: <br/><input type='text' onChange={this.UpdateForm}/></label><br/>
-                    <label id='account-password'>Password:<br/><input type='password' onChange={this.UpdateForm}/></label><br/>
-                    <label>Select Mining Pool:</label><br/>
-                        <select id='eth-wallet'>
-                            <option>Eth4Default</option>
-                        </select>
-                    <br/>
-                    <br/>
-                    <button onClick={() => this.CheckLogin()}>Login</button>
+                <div>
+                    <div className='Login-Form'>
+                        <label id='account-workerName'>Your Worker Name: <br/><input type='text' onChange={this.UpdateWorkerName}/></label><br/>
+                        <label id='account-password'>Password:<br/><input type='password' onChange={this.UpdateWorkerPassword}/></label><br/>
+                        <label>Select Mining Pool:</label><br/>
+                            <select id='eth-wallet'>
+                                <option>Eth4Default</option>
+                            </select>
+                        <br/>
+                        <br/>
+                        <button onClick={() => this.CheckLogin()}>Login</button>
+                    </div>
+                    <div>
+                        {this.state.bSearch ? <div><RequestLogin username={this.state.workerName} password={this.state.workerPWD}/></div> : <div></div>}
+                    </div>
                 </div>
             );
         }
@@ -61,11 +58,10 @@ export default class Session extends React.Component
         {
             return(
                 <div>
-                    Register
+                    
                 </div>
             );
         }
         
     }
 }
-
