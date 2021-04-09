@@ -36,9 +36,8 @@ const Navigation = () => (
 
 function GetSession()
 {
-	// Admin | LoggedIn 
-	console.log(ReactSession.get("execAuthentication"));
-	var session = [ReactSession.get("execAuthentication"), true];
+	// Admin | LoggedIn
+	var session = [ReactSession.get("execAuthentication"), ReactSession.get("execAuthentication")];
 	return session;
 }
 

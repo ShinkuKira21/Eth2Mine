@@ -16,7 +16,7 @@ function RequestLogin(props)
         }).then(res => res.json()).then(data=>{setAuthentication({authentication: data.authentication, exec: data.execAuthentication});});
     }, []);
 
-    SetSession({auth: authentication, execAuth: authentication.exec, username: props.username, password: props.password});
+    SetSession({auth: authentication.authentication, execAuth: authentication.exec, username: props.username, password: props.password});
     
     // Login Successful
     if(authentication != false)
