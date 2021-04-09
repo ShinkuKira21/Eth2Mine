@@ -43,7 +43,6 @@ function SetSession(props)
     ReactSession.set("authentication", props.auth);
     ReactSession.set("execAuthentication", props.execAuth);
     ReactSession.set("username", props.username);
-    ReactSession.set("password", props.password);
 }
 
 export default RequestLogin

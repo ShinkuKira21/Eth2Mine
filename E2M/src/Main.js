@@ -4,7 +4,7 @@ import Statistics from './pages/statistics';
 import Account from './pages/account';
 import aLogin from './pages/login';
 import aReg from './pages/register';
-
+import aLogOut from './pages/logout';
 import {Switch, Route } from 'react-router-dom';
 import FetchPing from './comps/py-server-scripts/scrPing';
 
@@ -23,6 +23,7 @@ const Main = () => (
       <Route exact path='/account' component={Account}/>
       <Route exact path='/account/login' component={aLogin}/>
       <Route exact path='/account/register' component={aReg}/>
+      <Route exact path='/account/logout' component={aLogOut}/>
     </Switch>
 );
 
