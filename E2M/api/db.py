@@ -26,5 +26,9 @@ class DatabaseConnection :
         cursor.execute(qry)
         return cursor
 
+    def CommitDatabase(self) :
+        self.connection.commit()
+        return True
+
     def CloseDatabase(self) :
         self.connection.close()
