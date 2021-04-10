@@ -38,9 +38,14 @@ export default class EtherMiner extends React.Component {
 						Mining Pool Name: Eth4Default <br/>
 						Wallet: {this.state.wallet} <br/>
 						Worker(s): {this.state.ethpool.currentStatistics.activeWorkers} <br/>
-						Unpaid (ETH): {(this.state.ethpool.currentStatistics.unpaid / this.state.units).toFixed(5)} <br/>
-						Pay Users?: {(this.state.ethpool.currentStatistics.unpaid / this.state.units.toFixed(5) >= 0.9) ? "true" : "false"} <br/>
+						Unpaid (ETH): <FetchLatestPool option="pay" threshold={this.state.threshold}/>
+						Pay Users?: {(this.state.ethpool.currentStatistics.unpaid / this.state.units.toFixed(5) >= this.state.threshold) ? "true" : "false"} <br/>
+
 						Pot Target / Unpaid: <FetchLatestPool option="pot" threshold={this.state.threshold} currentmined={this.state.ethpool.currentStatistics.unpaid} units={this.state.units} />
+
+						Total Target / Unpaid: <FetchLatestPool option="total-pot" threshold={this.state.threshold} currentmined={this.state.ethpool.currentStatistics.unpaid} units={this.state.units} />
+
+						Profit: <FetchLatestPool option="profit" threshold={this.state.threshold} currentmined={this.state.ethpool.currentStatistics.unpaid} units={this.state.units} />
 					</div>}
 				</div>
 			);
