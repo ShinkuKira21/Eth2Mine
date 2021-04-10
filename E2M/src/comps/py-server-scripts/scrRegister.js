@@ -1,10 +1,8 @@
 import {useState, useEffect} from 'react';
-import {ReactSession} from 'react-client-session';
 import {Redirect} from 'react-router';
 
 function RequestRegister(props)
 {
-    console.log("here");
     const [status, setStatus] = useState(0);
 
     useEffect(() => {

@@ -1,6 +1,6 @@
 import React from "react";
 import Cache from "../comps/eth.cache"
-
+import FetchLatestPool from '../comps/py-server-scripts/scrLatestPool'
 export default class EtherMiner extends React.Component {
 	ethCache = Cache;
 
@@ -8,6 +8,7 @@ export default class EtherMiner extends React.Component {
 		wallet: null,
 		loading: true,
 		ethpool: null,
+		threshold: 0.9,
 		units: 1000000000000000000
 	};
 
@@ -39,7 +40,7 @@ export default class EtherMiner extends React.Component {
 						Worker(s): {this.state.ethpool.currentStatistics.activeWorkers} <br/>
 						Unpaid (ETH): {(this.state.ethpool.currentStatistics.unpaid / this.state.units).toFixed(5)} <br/>
 						Pay Users?: {(this.state.ethpool.currentStatistics.unpaid / this.state.units.toFixed(5) >= 0.9) ? "true" : "false"} <br/>
-						Target / Unpaid: 0.9 / {(this.state.ethpool.currentStatistics.unpaid / this.state.units).toFixed(5)}
+						Pot Target / Unpaid: <FetchLatestPool option="pot" threshold={this.state.threshold} currentmined={this.state.ethpool.currentStatistics.unpaid} units={this.state.units} />
 					</div>}
 				</div>
 			);
@@ -50,7 +51,7 @@ export default class EtherMiner extends React.Component {
 				<div>
 					{this.state.loading ? <div>Loading...</div> :
 					<div className='pool-info'>
-						Target / Unpaid: 0.9 / {(this.state.ethpool.currentStatistics.unpaid / this.state.units).toFixed(5)}
+						Pot Target / Unpaid: <FetchLatestPool option="pot" threshold={this.state.threshold} currentmined={this.state.ethpool.currentStatistics.unpaid} units={this.state.units} />
 					</div>}
 				</div>
 			);
