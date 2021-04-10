@@ -15,7 +15,7 @@ function FetchLatestPool(props)
         return (
             <div className='pot'>
                 {console.log(latestPool.totalMined)}
-                {props.threshold} / {((latestPool.totalMined) + (props.currentmined / props.units) - parseFloat(latestPool.totalPayout)).toFixed(5)}
+                {props.threshold} / {((latestPool.totalMined) + (props.currentmined / props.units) - latestPool.totalPayout).toFixed(5)}
             </div>
         );
     
@@ -23,6 +23,13 @@ function FetchLatestPool(props)
         return (
             <div className='pay'>
                 {latestPool.totalPayout} ETH
+            </div>
+        );
+
+    else if(props.option == "profit")
+        return (
+            <div className='profit'>
+                {(latestPool.totalMined + (props.currentmined / props.units) - latestPool.totalPayout).toFixed(5)} ETH
             </div>
         );
 
