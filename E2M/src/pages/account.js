@@ -34,7 +34,7 @@ function LoadAccount(qryWorker)
     return <EtherMinerWorker worker={qry.qryWorker} admin={true}/>;
 }
 
-function GenerateMiningAddress(qryWorker, qryWallet)
+function GenerateMiningAddress(qryWorker)
 {
     var qry = qryWorker;
     return <EthermineGen worker={qry.qryWorker}/>

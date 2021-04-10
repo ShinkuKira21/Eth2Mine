@@ -4,28 +4,30 @@ export default class Rewards extends React.Component {
     state = {
         memershipType: null,
 
+        // DOLLARS
+
         // up to 100MH/s
         lowRewards: {
-            bronze: 5, // bronze
-            silver: 10, // silver
-            gold: 15, // gold
+            bronze: 6.50, // bronze
+            silver: 12, // silver
+            gold: 20, // gold
             premium: 30, // premium
         },
 
         // Up to 200MH/s
         mediumRewards: {
-            bronze: 10, // bronze
-            silver: 75, // silver
-            gold: 90, // gold
-            premium: 150, // premium
+            bronze: 12, // bronze
+            silver: 100, // silver
+            gold: 120, // gold
+            premium: 200, // premium
         },
 
         //Up to 450MH/s
         highRewards: {
-            bronze: 15, // bronze
-            silver: 125, // silver
-            gold: 250, // gold
-            premium: 360, // premium
+            bronze: 20.50, // bronze
+            silver: 170, // silver
+            gold: 345, // gold
+            premium: 500, // premium
         }
     }
 
@@ -56,5 +58,5 @@ function GetEarntRewards(rate, hours)
 function GetMiningHours()
 {
     // Gather from Database (Pay Hours Field)
-   return 10;
+   return 0;
 }
