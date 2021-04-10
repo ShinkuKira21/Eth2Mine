@@ -1,5 +1,7 @@
+import { ReactSession } from "react-client-session";
 import EtherMinerWorker from "../api/ethminer-miner"
 import EthermineGen from "../comps/ethermine-gen";
+import Rewards from "../comps/reward-system";
 
 const account = () => 
 {
@@ -15,11 +17,11 @@ const account = () =>
                 <a href="https://bitcointalk.org/index.php?topic=2647654.0">Phoenix Miner</a>
             </div>
             <div className='statistics'>
-                <LoadAccount qryWorker="cg"/>
+                <LoadAccount qryWorker={ReactSession.get("username")}/>
             </div> 
-
-            <div className='payday'>
-                <h2>Request Payment</h2>
+            
+            <div className="rewards">
+                <Rewards />
             </div>
         </div>
     );

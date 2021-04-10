@@ -23,8 +23,6 @@ export default class EtherMinerWorker extends React.Component {
 
 		const minerHistoryURL = "https://api.ethermine.org/miner/" + this.state.wallet + "/worker/" + this.props.worker + "/history";
 
-		console.log(minerURL);
-
 		var response = await fetch(minerURL);
 		var data = await response.json();
 
@@ -50,7 +48,7 @@ export default class EtherMinerWorker extends React.Component {
 						Current Hashrate: {(this.state.ethpool.currentHashrate / this.state.units).toFixed(2)}MH/s <br/>
 						Average Hashrate: {(this.state.ethpool.averageHashrate / this.state.units).toFixed(2)}MH/s <br/>
 						Reported Hashrate: {(this.state.ethpool.reportedHashrate / this.state.units).toFixed(2)}MH/s <br/>			
-						Mining Time: {GetWorkerHours(this.state.history)[0]} hours
+						Current Mining Time: {GetWorkerHours(this.state.history)[0]} hours
 					</div>}
 				</div>
 			);
