@@ -1,34 +1,14 @@
 import React from 'react'
+import Session from '../api/session';
+import RequestLogin from '../comps/py-server-scripts/scrLogin';
 
 const login = () => {
+    RequestLogin({username: "test"});
     return (
-		 <div className='page-title'>
+		 <div className='login'>
 			<h1>Login</h1>
-			<LoginPrompt />
+            <Session login={true}/>
 		 </div>	
     );
 }
-
-function LoginPrompt()
-{
-   return (
-        <div className='Login-Form'>
-			<label id='account-wallet'>Your ETH Wallet: <input type='text'/></label><br/>
-            <label id='account-password'>Account Password: <input type='text'/></label><br/>
-            <label>Select Mining Pool:</label><br/>
-                <select id='eth-wallet'>
-                    <option>Eth4Default</option>
-                </select>
-            <br/>
-            <br/>
-            <button>Login</button>
-		</div>
-   );
-}
-
-function CheckLogin()
-{
-    
-}
-
 export default login
