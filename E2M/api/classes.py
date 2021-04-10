@@ -15,7 +15,7 @@ class LoginScripts :
 
         dbc.ConnectToDatabase()
         cursor = dbc.QuerySelectDatabase(qry)
-       # dbc.CloseDatabase()
+        #dbc.CloseDatabase()
 
         return cursor
 
@@ -70,3 +70,18 @@ class RegisterScripts :
         dbc.CloseDatabase()
 
         return status
+
+class PoolScripts :
+    def GetLatestRow(self) :
+        qry = "SELECT totalMined, totalPayout FROM Pool"
+
+        dbc.ConnectToDatabase()
+        cursor = dbc.QuerySelectDatabase(qry)
+
+        results = []
+
+        for row in cursor :
+            for i in range(0, 2) :
+                results.append(str(row[i]))
+
+        return results

@@ -42,7 +42,6 @@ export default class EtherMinerWorker extends React.Component {
 					{this.state.loading ? <div>Loading...</div> :
 					<div className='worker-info'>
 						<h2>Worker Information</h2>
-						Account Name: {/* Session Account Name */} <br/>
 						Worker Name: {this.props.worker} <br/>
 						Worker Last Seen: {GetTime(this.state.ethpool.lastSeen)}<br/>
 						Current Hashrate: {(this.state.ethpool.currentHashrate / this.state.units).toFixed(2)}MH/s <br/>

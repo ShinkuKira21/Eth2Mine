@@ -44,3 +44,9 @@ def register() :
     registerScr = classes.RegisterScripts()
     status = registerScr.CreateAccount(workerName, workerPWD, workerFN, workerLN, workerWallet)
     return {"status": status}
+
+@app.route('/pool-details')
+def fetchpool() :
+    poolScr = classes.PoolScripts()
+    results = poolScr.GetLatestRow()
+    return {"totalMined": float(results[0]), "totalPayout": float(results[1])}
