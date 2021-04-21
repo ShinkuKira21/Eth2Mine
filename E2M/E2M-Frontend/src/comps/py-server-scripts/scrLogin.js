@@ -13,13 +13,13 @@ function RequestLogin(props)
                 'Content-type': 'application/json',
             },
             body: JSON.stringify(props),
-        }).then(res => res.json()).then(data=>{setAuthentication({authentication: data.authentication, exec: data.execAuthentication});});
+        }).then(res => res.json()).then(data=>{setAuthentication({auth: data.authentication, exec: data.execAuthentication});});
     }, []);
 
-    SetSession({auth: authentication.authentication, execAuth: authentication.exec, username: props.username, password: props.password});
+    SetSession({auth: authentication.auth, execAuth: authentication.exec, username: props.username, password: props.password});
     
     // Login Successful
-    if(authentication !== false)
+    if(authentication.auth)
     {
         return (
             <div>
@@ -29,15 +29,23 @@ function RequestLogin(props)
     }
 
     // this would have been nice in a component so that you could check if request is complete or not.
-    else
+    else if (authentication.auth === false)
     {
         return(
             <div>
-                Could be loading though!
                 Wrong Worker Name or Password!
             </div>
         );
         
+    }
+
+    else
+    {
+        return (
+            <div>
+                Loading!
+            </div>
+        );
     }
 }
 

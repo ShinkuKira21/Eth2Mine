@@ -23,7 +23,7 @@ def login():
 
     loginScr = classes.LoginScripts()
     result = loginScr.CheckLogin(username, password)
-
+    
     return {"authentication": result['auth'], "execAuthentication": result['execAuth']}
 
 @app.route('/account/register-cwn', methods = ['POST'])

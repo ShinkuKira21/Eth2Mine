@@ -8,7 +8,7 @@ class LoginScripts :
         if (self.GetDBField(username, 2)) :
             return {"auth": self.CheckPassword(username, password), "execAuth": self.CheckAdmin(username)}
 
-        return False
+        return {"auth": False, "execAuth": False}
     
     def GetUserRecord(self, username) :
         qry = "SELECT * FROM Account WHERE workerName = '" + username + "' LIMIT 1"
