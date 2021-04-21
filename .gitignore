@@ -1,2 +1,5 @@
 ftp.txt
 E2M/yarn.lock
+*.zip
+node_modules/
+venv/
