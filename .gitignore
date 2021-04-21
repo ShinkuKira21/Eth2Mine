@@ -3,3 +3,4 @@ E2M/yarn.lock
 *.zip
 node_modules/
 venv/
+__pycache__/
