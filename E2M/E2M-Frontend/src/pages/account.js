@@ -8,6 +8,11 @@ const account = () =>
 {
     return (
         <div className='account'>
+            <h1>Account Settings</h1>
+            {/*Account Settings would be nice in sidebar*/}
+            <div className="account-cpwd">
+                <NavLink to='/account/action-changepwd'>Change Password</NavLink>
+            </div>
             <h1>Account Information</h1>
             <div className='form-controls'>
             <GenerateMiningAddress qryWorker='cg'/>
@@ -23,10 +28,6 @@ const account = () =>
             
             <div className="rewards">
                 <Rewards />
-            </div>
-
-            <div className="account-cpwd">
-                <NavLink to='/account/action-changepw'>Change Password</NavLink>
             </div>
         </div>
     );

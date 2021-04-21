@@ -21,10 +21,17 @@ function RequestRegister(props)
             <div><Redirect to='/account/login'/></div>
         );
     }
+    else if(status === false)
+    {
+        <div>
+            Registration Error (500)
+        </div>
+    }
+
     else
     {
         return (
-            <div>Error</div>
+            <div>Loading!</div>
         );
     }
 }
