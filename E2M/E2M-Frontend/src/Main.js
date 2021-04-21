@@ -7,13 +7,14 @@ import aLogin from './pages/account-actions/login';
 import aReg from './pages/account-actions/register';
 import aLogOut from './pages/account-actions/logout';
 import {Switch, Route } from 'react-router-dom';
-import FetchPing from './comps/py-server-scripts/scrPing';
+import TandCs from './comps/TandCs';
 
 const Home = () => (
 	<div className='eth2mine'>
 		<h1>EtherMine</h1>
-    <FetchPing/>
+    Initial Threshold:
     <Ethminer admin={false}/>
+    <TandCs/> {/* Placeholder */}
 	</div>
 );
 
