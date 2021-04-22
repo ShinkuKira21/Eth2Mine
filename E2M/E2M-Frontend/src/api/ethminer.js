@@ -8,6 +8,7 @@ export default class EtherMiner extends React.Component {
 		wallet: null,
 		loading: true,
 		ethpool: null,
+		ethstats: null,
 		threshold: 0.9,
 		units: 1000000000000000000
 	};
@@ -19,12 +20,32 @@ export default class EtherMiner extends React.Component {
 		else {this.state.wallet = Cache({path: 0, ethpool: 0});}
 		
 		
-		const minerURL = "https://api.ethermine.org/miner/" + this.state.wallet + "/dashboard";
+		var minerURL = "https://api.ethermine.org/miner/" + this.state.wallet + "/dashboard";
 
-		const response = await fetch(minerURL);
-		const data = await response.json();
+		var response = await fetch(minerURL);
+		var data = await response.json();
 
-		this.setState({ethpool: data.data, loading: false});
+		this.setState({ethpool: data.data});
+
+		minerURL = "https://api.ethermine.org/miner/" + this.state.wallet + "/currentStats";
+		response = await fetch(minerURL);
+		data = await response.json();
+
+		this.setState({ethstats: data.data})
+
+		this.calibrateThreshold();
+
+		this.setState({loading: false});
+	}
+
+	calibrateThreshold()
+	{
+		var threshold = this.state.ethstats.coinsPerMin;
+		threshold *= 60; threshold *= 24; threshold *= 7; threshold *= 4;
+
+		if(threshold > 1) threshold = 1;
+
+		this.setState({threshold: Math.round(threshold * 100) / 100})
 	}
 
 	render() {
