@@ -11,5 +11,5 @@ class timer :
         self.sched.enter(self.minutes, 1, self.startTimer, (sc,))
 
     def runTimer(self):
-        self.sched.enter(self.minutes, 1, self.startTimer, (self.sched,))
+        self.sched.enter(0.01, 1, self.startTimer, (self.sched,))
         self.sched.run()
