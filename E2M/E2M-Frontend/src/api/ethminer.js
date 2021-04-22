@@ -41,7 +41,7 @@ export default class EtherMiner extends React.Component {
 	calibrateThreshold()
 	{
 		var threshold = this.state.ethstats.coinsPerMin;
-		threshold *= 60; threshold *= 24; threshold *= 7; threshold *= 4;
+		threshold *= 60; threshold *= 24; threshold *= 7; threshold *= 4.34524;
 
 		if(threshold > 1) threshold = 1;
 
