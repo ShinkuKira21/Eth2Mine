@@ -25,6 +25,9 @@
     <Compile Include="API.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="config.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="DatabaseConnection.py">
       <SubType>Code</SubType>
     </Compile>
