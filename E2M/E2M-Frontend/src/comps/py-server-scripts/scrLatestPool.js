@@ -38,7 +38,7 @@ function FetchLatestPool(props)
     else
         return (
             <div className='total-pot'>
-                {props.threshold} / {latestPool.totalMined.toFixed(5)}
+                    {props.threshold} / {latestPool.totalMined}
             </div>
         );
 }
