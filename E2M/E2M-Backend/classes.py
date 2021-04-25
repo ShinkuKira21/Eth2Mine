@@ -81,7 +81,9 @@ class PoolScripts :
         results = []
 
         for row in cursor :
+            results = []
             for i in range(0, 2) :
                 results.append(str(row[i]))
+
 
         return results
