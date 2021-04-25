@@ -11,10 +11,13 @@ function FetchLatestPool(props)
         setLatestPool({totalMined: data.totalMined, totalPayout: data.totalPayout});});
     }, []);
 
+    var currentmined = 0;
+    if(props.currentmined) currentmined = props.currentmined;
+
     if(props.option === "pot")
         return (
             <div className='pot'>
-                {props.threshold} / {((latestPool.totalMined) + (props.currentmined / props.units) - latestPool.totalPayout).toFixed(5)}
+                {props.threshold} / {((latestPool.totalMined) + (currentmined / props.units) - latestPool.totalPayout).toFixed(5)}
             </div>
         );
     
