@@ -30,5 +30,22 @@ class DatabaseConnection :
         self.connection.commit()
         return True
 
+    def GenerateIndex(self, table) :
+        qry = "SELECT ID FROM " + table
+
+        self.ConnectToDatabase()
+        cursor = self.QuerySelectDatabase(qry)
+
+        # Generates new row
+        index = 0
+
+        for row in cursor :
+            index = int(row[0])
+
+        if(cursor.rowcount > 0) :
+            index += 1
+
+        return index
+
     def CloseDatabase(self) :
         self.connection.close()

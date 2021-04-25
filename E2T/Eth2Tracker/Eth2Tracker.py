@@ -9,7 +9,8 @@ dbc = DatabaseConnection()
 class Task :
     def executeTask(self) :
         print(str(tasks.GetCurrentThreshold(conf.primaryWallet)) + "eth")
-        tasks.SetPot(conf.primaryWallet, conf.units)
+        if tasks.SetPot(conf.primaryWallet, conf.units) is False :
+           print("Error")
 
 # 10 Minutes
 timer = timer(Task())

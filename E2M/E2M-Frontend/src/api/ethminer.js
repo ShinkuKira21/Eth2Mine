@@ -1,7 +1,8 @@
 import React from "react";
 import Cache from "../comps/eth.cache"
 import FetchLatestPool from '../comps/py-server-scripts/scrLatestPool'
-export default class EtherMiner extends React.Component {
+export default class EtherMiner extends React.Component 
+{
 	ethCache = Cache;
 
 	state = {
