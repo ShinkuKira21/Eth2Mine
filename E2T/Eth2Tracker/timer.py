@@ -7,7 +7,7 @@ class timer :
         self.sched = sched.scheduler(time.time, time.sleep)
 
     def startTimer(self, sc) :
-        self.subobj.executeTask()
+        print(self.subobj.executeTask())
         self.sched.enter(self.minutes, 1, self.startTimer, (sc,))
 
     def runTimer(self):
