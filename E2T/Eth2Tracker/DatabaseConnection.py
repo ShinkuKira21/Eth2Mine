@@ -4,10 +4,10 @@ class DatabaseConnection :
     def __init__(self):
         self.user = "web-267e2m"
         self.password = "y4^5kmP?a(2{"
-        self.host = "crypto2mine.org"
+        self.host = "92.205.4.171"
         self.port = 3306
         self.db = "EtherMine"
-        self.connection = ""
+        self.connection = None
 
     def ConnectToDatabase(self) :
         self.connection = sql.connect(host = self.host, port = self.port, user = self.user, password = self.password, database = self.db)
