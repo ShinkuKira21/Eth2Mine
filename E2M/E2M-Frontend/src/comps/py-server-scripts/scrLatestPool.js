@@ -11,10 +11,13 @@ function FetchLatestPool(props)
         setLatestPool({totalMined: data.totalMined, totalPayout: data.totalPayout});});
     }, []);
 
+    var currentmined = 0;
+    if(props.currentmined) currentmined = props.currentmined;
+
     if(props.option === "pot")
         return (
             <div className='pot'>
-                {props.threshold} / {((latestPool.totalMined) + (props.currentmined / props.units) - latestPool.totalPayout).toFixed(5)}
+                {props.threshold} / {(latestPool.totalMined - latestPool.totalPayout).toFixed(5)}
             </div>
         );
     
@@ -28,14 +31,21 @@ function FetchLatestPool(props)
     else if(props.option === "profit")
         return (
             <div className='profit'>
-                {(latestPool.totalMined + (props.currentmined / props.units) - latestPool.totalPayout).toFixed(5)} ETH
+                {(latestPool.totalMined - latestPool.totalPayout).toFixed(5)} ETH
+            </div>
+        );
+
+    else if(props.option === "total")
+        return (
+            <div className='total-pot'>
+                    {props.threshold} / {latestPool.totalMined}
             </div>
         );
 
     else
-        return (
-            <div className='total-pot'>
-                {props.threshold} / {(latestPool.totalMined + (props.currentmined / props.units)).toFixed(5)}
+        return(
+            <div className="average-hashrate">
+
             </div>
         );
 }

@@ -1,0 +1,90 @@
+
+I revised the plan thought ahead, these are the options we can choose to give on start up: -
+
+A option comes up on sign up (for only new members):
+
+Option A: Mine with us free for a month and skip bronze, become Gold (This will put money in our profits (a pot)) (1 Month to get Gold) (Measured at low rates ($20 a day (4 hours) $609 in 2 months.)
+
+Option B: Mine with us straightaway, and earn Bronze for a month, then after payday, Silver is given, and after mining another month, Gold is given. (3 months to get Gold)
+(Measured at low rates ($6.91 * 7 * 4.35 = $210.41) then a month of Silver ($13.82 * $7 * 4.35 + $210.41 = $631.23).
+
+
+OPTION A:
+			Get's a class that is special to others.
+						  Months
+						1	    2
+Free + Gold + Special: Free | $609 + %10 (daily) of their mine.
+
+(Let's say they make $7 a day, they get back $0.70 | 
+	After 2 months they end up with 
+	0.70 * 7 * 4.35 = $21.315) ($609 + $21.32 = $630.32)
+
+(This package Special will be with them every month after. Which Option B's don't get)
+
+
+OPTION B:
+					   Months
+					1		  2			
+Bronze + Silver: $210.41 | $631.23 
+(it may seem this is a better option because they make 
+	$1.23 dollar extra but they will never get %10 back on top.)
+	
+	
+With this system it will make sure the threshold system may even render useless and never used.
+
+
+PREMIUM TAKES 6 MONTHS TOTAL MINING TO GET (at that point they earnt the rewards
+and we should be giving it like candy at that point)
+
+PROFIT is what they get instead of mining alone
+
+NEW REWARD PRICING WITH REALISTIC COMPARISON FROM CryptoCompare.com calculator.
+(with pool fee set to 0 and electric too just to keep it non-biased)
+
+Low Rate:
+	Bronze: $6.50
+	Silver: $12
+	Gold: $20
+	Premium: $40
+	
+Medium Rate:
+	B: $12
+	S: $30
+	G: $50
+	P: $70
+	
+High Rate:
+	B: $20.50
+	S: $50
+	G: $75
+	P: $95
+	
+Special Option A Reward:
+	10% with Gold and above.
+	
+FURTHER MORE RATE SYSTEM
+
+Low: 15 - 200 (MH/s) - Based on CryptoCompare.com they make $40.92 - $545.56 a month. 
+
+Our Offers:
+Special: Package below + $124.60 to $1,6661.23
+Premium (maximum we offer) - $1,262.15 (in a month) Profit: $1,221.23 - $761.59
+Gold - $609 (in a month) - Profit: $568.08 - $63.44
+
+
+Medium: 200.01 - 500 (MH/s) - $545.59 - $1,363.90
+
+Our Offers:
+Special: Package below + $54.56 - $136.39
+Premium (maximum we offer) - $2,131.50 (in a month) Profit: $1,585.91 - $767.60
+Gold - $1,522.50 (in a month) Profit: $976.91 - $158.60
+
+
+(We can fix this one by moving the max down, 
+but they still make a great profit)
+High: 500.01 - 800 (MH/S) - $1,363.92 - $2,182.23
+
+Our Offers:
+Special: Package below + $136.39 - 
+Premium (maximum we offer) - $2,892.75 (in a month) Profit: $1,528.83 - $710.52 (still a profit and gives us extra back.)
+Gold - $2,283.75 (in a month) Profit: $919.83 - $101.52
