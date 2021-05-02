@@ -35,10 +35,17 @@ function FetchLatestPool(props)
             </div>
         );
 
-    else
+    else if(props.option === "total")
         return (
             <div className='total-pot'>
                     {props.threshold} / {latestPool.totalMined}
+            </div>
+        );
+
+    else
+        return(
+            <div className="average-hashrate">
+
             </div>
         );
 }
