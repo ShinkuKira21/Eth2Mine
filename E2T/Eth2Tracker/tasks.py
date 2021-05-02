@@ -37,6 +37,9 @@ def dbSetPot(wallet, units) :
 
     return status
 
+def dbSetAccount(wallet) :
+    pass
+
 def GetCurrentThreshold (wallet, bPerMonth = True) :
     currentStats = API("https://api.ethermine.org/miner/" + wallet + "/currentStats")
 
