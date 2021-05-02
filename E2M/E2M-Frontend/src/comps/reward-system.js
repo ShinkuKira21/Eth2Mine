@@ -17,17 +17,17 @@ export default class Rewards extends React.Component {
         // Up to 200MH/s
         mediumRewards: {
             bronze: 12, // bronze
-            silver: 100, // silver
-            gold: 120, // gold
-            premium: 200, // premium
+            silver: 30, // silver
+            gold: 50, // gold
+            premium: 70, // premium
         },
 
         //Up to 450MH/s
         highRewards: {
             bronze: 20.50, // bronze
-            silver: 170, // silver
-            gold: 345, // gold
-            premium: 500, // premium
+            silver: 50, // silver
+            gold: 75, // gold
+            premium: 95, // premium
         }
     }
 
