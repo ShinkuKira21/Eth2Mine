@@ -47,5 +47,14 @@ class DatabaseConnection :
 
         return index
 
+    def GetIndex(self, table, select, where, field) :
+        qry = "SELECT " + select + " FROM " + table + " WHERE " + field + " = '" + where + "' LIMIT 1"
+
+        self.ConnectToDatabase()
+        cursor = self.QuerySelectDatabase(qry)
+
+        for row in cursor :
+           return str(row[0])
+
     def CloseDatabase(self) :
         self.connection.close()

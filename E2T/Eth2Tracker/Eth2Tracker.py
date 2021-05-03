@@ -1,3 +1,4 @@
+from datetime import datetime, timezone
 from config import Config
 from timer import timer
 from DatabaseConnection import DatabaseConnection
@@ -8,8 +9,13 @@ dbc = DatabaseConnection()
 
 class Task :
     def executeTask(self) :
-        if tasks.dbSetPot(conf.primaryWallet, conf.units) is False :
+        currentDateTime = format(datetime.utcnow().timestamp(), '.0f')
+
+        if tasks.dbSetPot(conf.primaryWallet, conf.units, currentDateTime) is False :
            return "Error"
+        
+        if tasks.dbSetAccount(conf.primaryWallet, conf.units, currentDateTime) is False :
+            return "Error"
 
         return "Updated!"
 
