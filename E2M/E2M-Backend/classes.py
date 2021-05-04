@@ -15,7 +15,6 @@ class LoginScripts :
 
         dbc.ConnectToDatabase()
         cursor = dbc.QuerySelectDatabase(qry)
-        #dbc.CloseDatabase()
 
         return cursor
 
@@ -42,28 +41,11 @@ class LoginScripts :
 
 
 class RegisterScripts :
-    def GenerateIndex(self) :
-        qry = "SELECT ID FROM Account"
-
-        dbc.ConnectToDatabase()
-        cursor = dbc.QuerySelectDatabase(qry)
-
-        # Generates new row
-        index = 0
-
-        for row in cursor :
-            index = int(row[0])
-
-        if(cursor.rowcount > 0) :
-            index += 1
-
-        return index
-
     def CreateAccount(self, workerName, workerPWD, workerFirstName, workerLastName, workerWallet) :
         encryption = workerPWD.encode('utf-8') # encrypts password
         password = bcrypt.hashpw(encryption, bcrypt.gensalt()).decode('utf-8')
 
-        qry = "INSERT INTO Account(ID, wallet, workerName, workerPass, firstName, lastName, TYPE) VALUES(" + str(self.GenerateIndex()) + ", '" + workerWallet + "', '" + workerName + "', '" + password + "', '" + workerFirstName + "', '" + workerLastName + "', 'worker')"
+        qry = "INSERT INTO Account(ID, wallet, workerName, workerPass, firstName, lastName, TYPE) VALUES(" + str(dbc.GenerateIndex("Account")) + ", '" + workerWallet + "', '" + workerName + "', '" + password + "', '" + workerFirstName + "', '" + workerLastName + "', 'worker')"
 
         dbc.QuerySelectDatabase(qry)
         status = dbc.CommitDatabase()
@@ -85,5 +67,27 @@ class PoolScripts :
             for i in range(0, 2) :
                 results.append(str(row[i]))
 
+
+        return results
+
+class AccountScripts :
+    def GetAccountRewards(self, workerName) :
+        index = dbc.GetIndex("Account", "ID", workerName, "workerName")
+        record = self.GetRecord(index)
+
+        return {'ethRewards': record}
+        
+    def GetRecord(self, index) :
+        # I'll add more later
+        # perhaps add register and login scripts here but not really a problem atm
+        qry = "SELECT ethEarned FROM Account WHERE id = " + str(index) + " LIMIT 1"
+
+        dbc.ConnectToDatabase()
+        cursor = dbc.QuerySelectDatabase(qry)
+        
+        results = []
+        for row in cursor :
+            for field in row :
+                results.append(str(field))
 
         return results
