@@ -21,8 +21,6 @@ export default class GetAccount extends Component
     );
     
     this.setState({data: data.data, bLoading: false});
-
-    console.log(this.state.data)
   }
 
   render() {
