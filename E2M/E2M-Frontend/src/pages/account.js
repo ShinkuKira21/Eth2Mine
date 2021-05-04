@@ -2,7 +2,6 @@ import { ReactSession } from "react-client-session";
 import { NavLink } from "react-router-dom";
 import EtherMinerWorker from "../api/ethminer-miner"
 import EthermineGen from "../comps/ethermine-gen";
-import Rewards from "../comps/reward-system";
 
 const account = () => 
 {
