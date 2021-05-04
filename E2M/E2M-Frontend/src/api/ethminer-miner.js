@@ -1,5 +1,6 @@
 import React from "react";
 import Cache from "../comps/eth.cache"
+import GetAccount from "../comps/py-server-scripts/scrGetAccount";
 
 export default class EtherMinerWorker extends React.Component {
 	ethCache = Cache;
@@ -47,7 +48,8 @@ export default class EtherMinerWorker extends React.Component {
 						Current Hashrate: {(this.state.ethpool.currentHashrate / this.state.units).toFixed(2)}MH/s <br/>
 						Average Hashrate: {(this.state.ethpool.averageHashrate / this.state.units).toFixed(2)}MH/s <br/>
 						Reported Hashrate: {(this.state.ethpool.reportedHashrate / this.state.units).toFixed(2)}MH/s <br/>			
-						Current Mining Time: {GetWorkerHours(this.state.history)[0]} hours
+						Current Mining Time: {GetWorkerHours(this.state.history)[0]} hours<br/>
+						<GetAccount mode={0} worker={this.props.worker}/>
 					</div>}
 				</div>
 			);
