@@ -24,10 +24,6 @@ const account = () =>
             </div>
             <div className='statistics'>
                 <LoadAccount qryWorker={ReactSession.get("username")}/>
-            </div> 
-            
-            <div className="rewards">
-                <Rewards />
             </div>
         </div>
     );

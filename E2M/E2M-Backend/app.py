@@ -10,9 +10,20 @@ CORS(app)
 
 dbc = db.DatabaseConnection()
 
+# AXIOS UPGRADES GO HERE
 @app.route('/api/ping')
 def get_ping():
     return {"ping":dbc.ConnectToDatabase()}
+
+@app.route('/api/account/get-data', methods = ['POST'])
+def accountGetDetails() :
+    data = request.json
+    accountScr = classes.AccountScripts()
+    if(data['mode'] == 0) :
+        result = accountScr.GetAccountRewards(data['workerName'])
+        return {"data": result['ethRewards']}
+    
+    return {"data": None}
 
 @app.route('/account/login-submit', methods = ['POST'])
 def login():
