@@ -368,3 +368,4 @@ MigrationBackup/
 FodyWeavers.xsd
 E2T/.vs/Eth2Tracker/v16/.suo
 *.ipynb_checkpoints/
+*.vs/
