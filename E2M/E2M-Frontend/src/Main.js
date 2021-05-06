@@ -10,12 +10,23 @@ import {Switch, Route } from 'react-router-dom';
 import TandCs from './comps/TandCs';
 
 const Home = () => (
-	<div className='eth2mine'>
-		<h1>EtherMine</h1>
-    Initial Threshold:
-    <Ethminer admin={false}/>
-    <TandCs/> {/* Placeholder */}
-	</div>
+<div className='coverpage'>
+    <div className='jumbotron jumbotron-fluid jumbostyle'>
+        <div className='container'>
+	        <div className='eth2mine'>
+		        <h1 class='cover-heading'>EtherMine</h1>
+                <p className='lead'>Mining Threshold Before Payout!
+                        <div className='pooldata'>
+                            <Ethminer admin={false} />
+                        </div>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div className='container'>
+        <TandCs /> {/* Placeholder */}
+    </div>
+</div>
 );
 
 const Main = () => (

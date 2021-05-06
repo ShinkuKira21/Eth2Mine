@@ -63,7 +63,7 @@ export default class EtherMiner extends React.Component
 						Unpaid (ETH): <FetchLatestPool option="pay" threshold={this.state.threshold}/>
 						Pay Users?: {(this.state.ethpool.currentStatistics.unpaid / this.state.units.toFixed(5) >= this.state.threshold) ? "true" : "false"} <br/>
 
-						Pot Target / Unpaid: <FetchLatestPool option="pot" threshold={this.state.threshold} currentmined={this.state.ethpool.currentStatistics.unpaid} units={this.state.units} />
+						<p>Pot Target / Unpaid:</p><FetchLatestPool option="pot" threshold={this.state.threshold} currentmined={this.state.ethpool.currentStatistics.unpaid} units={this.state.units} />
 
 						Total Target / Unpaid: <FetchLatestPool option="total-pot" threshold={this.state.threshold} currentmined={this.state.ethpool.currentStatistics.unpaid} units={this.state.units} />
 
@@ -78,7 +78,7 @@ export default class EtherMiner extends React.Component
 				<div>
 					{this.state.loading ? <div>Loading...</div> :
 					<div className='pool-info'>
-						Pot Target / Unpaid: <FetchLatestPool option="pot" threshold={this.state.threshold} currentmined={this.state.ethpool.currentStatistics.unpaid} units={this.state.units} />
+						<p className='target'>Our Target / Total Mined: </p><p className='target-val'><FetchLatestPool option="pot" threshold={this.state.threshold} currentmined={this.state.ethpool.currentStatistics.unpaid} units={this.state.units} /></p>
 					</div>}
 				</div>
 			);
