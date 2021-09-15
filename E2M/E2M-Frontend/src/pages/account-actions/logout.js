@@ -20,5 +20,4 @@ function ExpireSession()
     ReactSession.remove("username");
 }
 
-
 export default Logout
